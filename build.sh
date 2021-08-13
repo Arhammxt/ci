@@ -61,7 +61,7 @@ KERNEL_NAME="ZAxisKernel"
 
 DEFCONFIG="mido_defconfig"
 
-AnyKernel="https://github.com/Zeutarham/anykernel.git"
+AnyKernel="https://github.com/Arhammxt/anykernel.git"
 AnyKernelbranch="master"
 
 HOSST="Zeuts's Buildbot"
@@ -205,7 +205,7 @@ KERVER=$(make kernelversion)
                 mv Image.gz-dtb zImage
                 export ZIP="$KERNEL_NAME"-"$CODENAME"-"$DATE"
                 zip -r "$ZIP" *
-                curl -sLo zipsigner-3.0.jar https://raw.githubusercontent.com/Zeutarham/AnyKernel/master/zipsigner-3.0.jar
+                curl -sLo zipsigner-3.0.jar https://raw.githubusercontent.com/Arhammxt/AnyKernel/master/zipsigner-3.0.jar
                 java -jar zipsigner-3.0.jar "$ZIP".zip "$ZIP"-signed.zip
                 tg_post_msg "<b>=============================</b> %0A <b>× ZAxis Kernel For Redmi note 4/4x ×</b> %0A <b>=============================</b> %0A%0A <b>Date : </b> <code>$(TZ=India/Kolkata date)</code> %0A%0A <b>Device Code Name:</b> <code>$CODENAME</code> %0A%0A <b>Kernel Version :</b> <code>$KERVER</code> %0A%0A <b>Developer:</b> @ZEUTS %0A%0A <b>Channel t.me/ZAxisUpdates %0A%0A <b>Download Normal version:</b> %0A https://t.me/ZAxisUpdates/ %0A%0A <b>Download Overclock version:</b> %0A https://t.me/ZAxisUpdates/ #ZAxiskernel #mido" "$CHATID"
                 tg_post_build "$ZIP"-signed.zip "$CHATID"
