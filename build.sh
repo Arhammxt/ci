@@ -52,20 +52,20 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 #
 # TOOLCHAIN = the toolchain u want to use "gcc/clang"
 
-CHATID="-1001283860476"
-API_BOT="1697957520:AAFCYck7z3zveYawh3mF7yq2hefW2sZrQTY"
+CHATID="-1001524264358"
+API_BOT="1853505389:AAEEWWrIJZ7enNBUWv9_T0SC4zSCu0oHheo"
 
 DEVICE="Redmi Note 4/4X"
 CODENAME="mido"
-KERNEL_NAME="FussionKernel"
+KERNEL_NAME="ZAxisKernel"
 
 DEFCONFIG="mido_defconfig"
 
-AnyKernel="https://github.com/Hunter-commits/anykernel.git"
+AnyKernel="https://github.com/Arhammxt/anykernel.git"
 AnyKernelbranch="master"
 
-HOSST="Alone's Buildbot"
-USEER="Alone0316"
+HOSST="Zeuts's Buildbot"
+USEER="ZEUTS"
 
 TOOLCHAIN="clang"
 
@@ -205,7 +205,7 @@ KERVER=$(make kernelversion)
                 mv Image.gz-dtb zImage
                 export ZIP="$KERNEL_NAME"-OC-"$CODENAME"-"$DATE"
                 zip -r "$ZIP" *
-                curl -sLo zipsigner-3.0.jar https://raw.githubusercontent.com/Hunter-commits/anykernel/master/zipsigner-3.0.jar
+                curl -sLo zipsigner-3.0.jar https://raw.githubusercontent.com/Arhammxt/AnyKernel/master/zipsigner-3.0.jar
                 java -jar zipsigner-3.0.jar "$ZIP".zip "$ZIP"-signed.zip
                 tg_post_build "$ZIP"-signed.zip "$CHATID"
                 cd ..
